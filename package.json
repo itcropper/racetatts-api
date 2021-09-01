@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/itcropper/racetatts-api#readme",
   "dependencies": {
+    "aws-sdk": "^2.970.0",
     "bluebird": "3.5.1",
     "body-parser": "1.18.2",
     "btoa": "^1.2.1",
@@ -25,6 +26,7 @@
     "cookie-parser": "1.4.3",
     "cors": "2.8.4",
     "debug": "^2.4.5",
+    "dot-env": "0.0.1",
     "dotenv": "^4.0.0",
     "express": "4.16.3",
     "express-jwt": "5.3.1",
@@ -35,8 +37,11 @@
     "joi": "10.6.0",
     "jsonwebtoken": "7.1.9",
     "method-override": "^2.3.10",
+    "mongoose": "^5.13.7",
     "morgan": "1.9.0",
+    "stripe": "^8.169.0",
     "svg2img": "^0.9.3",
+    "uuidv4": "^6.2.12",
     "winston": "2.4.1"
   },
   "devDependencies": {

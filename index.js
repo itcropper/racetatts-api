@@ -3,11 +3,11 @@ const util = require('util');
 // config should be imported before importing any other file
 const config = require('./config/config');
 const app = require('./config/express');
-
-const debug = require('debug')('express-mongoose-es6-rest-api:index');
+const mongoose = require('./config/mongo');
+// const debug = require('debug')('express-mongoose-es6-rest-api:index');
 
 // make bluebird default Promise
-Promise = require('bluebird'); // eslint-disable-line no-global-assign
+// Promise = require('bluebird'); // eslint-disable-line no-global-assign
 
 app.use((err, req, res, next) => {
     res.locals.error = err;
