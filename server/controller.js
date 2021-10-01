@@ -170,9 +170,11 @@ async function checkout(req, res) {
         );
         status = "success";
         
+        const customerName = customer.name || (token && token.card && token.card.name);
+
         await addToPrintQueue({
             customerId: customer.id,
-            name: customer.name || token?.card?.name, 
+            name: customer.name || customerName, 
             email: token.email,
             imagelink: imageSource,
             price: product.price * 100,
