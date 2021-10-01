@@ -43,6 +43,7 @@ const deleteTask = async (id) => {
 };
 
 const getNextTask = async (req, res) => {
+
     var params = {
         TableName: TABLE_NAME,
         ExpressionAttributeValues: {
@@ -56,9 +57,9 @@ const getNextTask = async (req, res) => {
         //     }
         // }//`${new Date().getTime()} < :processedDate`,
     };
-``
+
     const result = await dynamoClient.scan(params).promise();
-  
+
     return res.json(result.Items[0] || {});
 }
 

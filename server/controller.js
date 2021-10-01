@@ -4,6 +4,7 @@ const svgConverter = require('./helpers/svgConverter');
 const path = require('path');
 const { AWS } = require('./helpers/aws-helper');
 const {addOrUpdateTask} = require('./helpers/dynamo');
+const {AddToPrintQueue} = require('./helpers/aws-sqs');
 const fs = require('fs');
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 const uuid = require("uuid/v4");
@@ -185,8 +186,15 @@ async function checkout(req, res) {
     res.json({ error, status });
 }
 
+function enque(req, res){
 
-module.exports = { draw, preview, createPaymentIntent, checkout, getPrintQueue };
+    var a = Promise.resolve(AddToPrintQueue('hey'));
+
+    return res.send(a);
+}
+
+
+module.exports = { draw, preview, createPaymentIntent, checkout, getPrintQueue, enque };
 
 /*** token Schema
 {

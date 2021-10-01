@@ -22,13 +22,21 @@ router
   .route('/checkout')
   .post(controller.checkout);
 
-router  
+router
   .route('/jobs/all')
   .get(dynamo.getTasks)
 
-router.route('/jobs/next').get(dynamo.getNextTask);
+router
+  .route('/jobs/next')
+  .get(dynamo.getNextTask);
 
-router.route('/jobs/printed/:printedId').put(dynamo.updateAfterPrint);
+router
+  .route('/jobs/printed/:printedId')
+  .put(dynamo.updateAfterPrint);
+
+router
+  .route('/jobs/send')
+  .get(controller.enque);
 
 // router
 //   .route('/addPrintJob')
